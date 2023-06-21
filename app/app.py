@@ -44,7 +44,7 @@ def app():
         
 
 user_input = st.text_area("Context", height=200, key="you are a bot very nice of a israeli startup",value="simple text summerizer should be here")
-st.write(chatterbot(user_input,context,max_tokens,temperature,engine))
+st.write(summeryizer(user_input,context,max_tokens,temperature,engine))
 
 def main():
     app()
