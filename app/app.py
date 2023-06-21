@@ -25,7 +25,6 @@ def app():
     st.title("OpenAI Simple Summerizer By Katya")
     
     with st.expander("Settings"):
-            context = st.text_area("Context", height=200, key="you are a bot very nice of a israeli startup",value="you are a bot very nice of a israeli startup")
             max_tokens = st.number_input("Max tokens", value=2000, key="max_tokens")
             temperature = st.number_input("Temperature", value=1, key="temperature")
             engine = st.text_input("Engine", "gpt3", key="gpt3")
