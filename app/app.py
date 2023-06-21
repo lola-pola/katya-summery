@@ -29,7 +29,7 @@ def app():
     done = False
     with st.sidebar:
             max_tokens = st.number_input("Max tokens", value=2000, key="max_tokens")
-            temperature = st.number_input("Temperature", value=1, key="temperature")
+            temperature = st.number_input("Temperature", value=1.0, key="temperature")
             engine = st.text_input("Engine", "gpt3", key="gpt3")
             
             
@@ -45,14 +45,11 @@ def app():
 
        
         
-    
-    user_input = st.text_area("Context", height=200, key="you are a bot very nice of a israeli startup",value="simple text summerizer should be here")
     if done:
-        st.write(summeryizer(user_input=user_input,max_tokens=max_tokens,temperature=temperature,engine=engine))
+        user_input = st.text_area("Context", height=200, key="you are a bot very nice of a israeli startup",value="simple text summerizer should be here")
+        if user_input:
+            st.write(summeryizer(user_input=user_input,max_tokens=max_tokens,temperature=temperature,engine=engine))
 
-def main():
-    app()
+app()
 
 
-if __name__ == '__main__':
-    main()
