@@ -18,7 +18,7 @@ def app():
               frequency_penalty=0,
               presence_penalty=0,
               stop=None)
-    
+
             return  response['choices'][0]['text']
         
 
@@ -45,8 +45,8 @@ def app():
         
         
 
-user_input = st.text_area("Context", height=200, key="you are a bot very nice of a israeli startup",value="simple text summerizer should be here")
-st.write(summeryizer(user_input=user_input,max_tokens=max_tokens,temperature=temperature,engine=engine))
+    user_input = st.text_area("Context", height=200, key="you are a bot very nice of a israeli startup",value="simple text summerizer should be here")
+    st.write(summeryizer(user_input=user_input,max_tokens=max_tokens,temperature=temperature,engine=engine))
 
 def main():
     app()
