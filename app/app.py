@@ -40,13 +40,14 @@ def app():
             openai.api_version = st.text_input("api version",value="2023-03-15-preview")
             openai.api_key = st.text_input('azure openai key', key="KEY_AZURE_AI", value=os.getenv("KEY_AZURE_AI"), type="password") 
             if st.checkbox("Submit", key="submit"):
+                done= True
                 st.success("Submitted!")
 
        
         
-
+    
     user_input = st.text_area("Context", height=200, key="you are a bot very nice of a israeli startup",value="simple text summerizer should be here")
-    if user_input:
+    if done:
         st.write(summeryizer(user_input=user_input,max_tokens=max_tokens,temperature=temperature,engine=engine))
 
 def main():
