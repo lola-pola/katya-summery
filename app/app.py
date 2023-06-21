@@ -42,11 +42,12 @@ def app():
             if st.checkbox("Submit", key="submit"):
                 st.success("Submitted!")
 
-        
+       
         
 
     user_input = st.text_area("Context", height=200, key="you are a bot very nice of a israeli startup",value="simple text summerizer should be here")
-    st.write(summeryizer(user_input=user_input,max_tokens=max_tokens,temperature=temperature,engine=engine))
+    if user_input:
+        st.write(summeryizer(user_input=user_input,max_tokens=max_tokens,temperature=temperature,engine=engine))
 
 def main():
     app()
