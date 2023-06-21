@@ -1,2 +1,2 @@
-# katya-summery
-katya-summery
+# chat-with-pdf
+chat-with-pdf
