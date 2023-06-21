@@ -27,7 +27,7 @@ def app():
     st.set_page_config(page_title="OpenAI Simple Summerizer By Katya", page_icon=":robot:")
     st.title("OpenAI Simple Summerizer By Katya")
     
-    with st.expander("Settings"):
+    with st.sidebar:
             max_tokens = st.number_input("Max tokens", value=2000, key="max_tokens")
             temperature = st.number_input("Temperature", value=1, key="temperature")
             engine = st.text_input("Engine", "gpt3", key="gpt3")
