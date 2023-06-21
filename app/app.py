@@ -4,11 +4,10 @@ import os
 
 
 
-def summeryizer(text, context,max_tokens=2000,temperature=1,engine="gpt3"):
-
+def summeryizer( user_input,max_tokens=2000,temperature=1,engine="gpt3"):
         response = openai.Completion.create(
           engine=engine,
-          prompt=f"Summary:{text}",
+          prompt=f"Summary:{user_input}",
           temperature=temperature,
           max_tokens=max_tokens,
           top_p=1,
@@ -44,7 +43,7 @@ def app():
         
 
 user_input = st.text_area("Context", height=200, key="you are a bot very nice of a israeli startup",value="simple text summerizer should be here")
-st.write(summeryizer(user_input,context,max_tokens,temperature,engine))
+st.write(summeryizer(user_input=user_input,max_tokens=max_tokens,temperature=temperature,engine=engine))
 
 def main():
     app()
