@@ -4,23 +4,26 @@ import os
 
 
 
-def summeryizer( user_input,max_tokens=2000,temperature=1,engine="gpt3"):
-        response = openai.Completion.create(
-          engine=engine,
-          prompt=f"Summary:{user_input}",
-          temperature=temperature,
-          max_tokens=max_tokens,
-          top_p=1,
-          frequency_penalty=0,
-          presence_penalty=0,
-          stop=None)
-
-        return  response['choices'][0]['text']
-        
-
 
 # Define Streamlit app
 def app():
+    
+    def summeryizer( user_input,max_tokens,temperature=1,engine="gpt3"):
+            response = openai.Completion.create(
+              engine=engine,
+              prompt=f"Summary:{user_input}",
+              temperature=temperature,
+              max_tokens=max_tokens,
+              top_p=1,
+              frequency_penalty=0,
+              presence_penalty=0,
+              stop=None)
+    
+            return  response['choices'][0]['text']
+        
+
+    
+    
     st.set_page_config(page_title="OpenAI Simple Summerizer By Katya", page_icon=":robot:")
     st.title("OpenAI Simple Summerizer By Katya")
     
@@ -28,6 +31,7 @@ def app():
             max_tokens = st.number_input("Max tokens", value=2000, key="max_tokens")
             temperature = st.number_input("Temperature", value=1, key="temperature")
             engine = st.text_input("Engine", "gpt3", key="gpt3")
+            
             
 
             # Set up OpenAI API key
